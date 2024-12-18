@@ -19,9 +19,11 @@ from django.contrib import admin
 from django.urls import path
 from firstapp.views import StudentView
 from secondapp.views import TeacherView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("firstapp/", StudentView, name="StudentView"),
     path("secondapp/", TeacherView, name="teacherapp"),
+
 ]
