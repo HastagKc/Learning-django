@@ -33,13 +33,3 @@ from datetime import datetime
 #     }
 
 #     return render(request, "main/index.html", context)
-
-
-def learn_django(request):
-
-    context = {
-        "stu1": {"name": "kshittiz", "age": 80},
-        "stu2": {"name": "Ram", "age": 22},
-        "stu3": {"name": "Unnati", "age": 21},
-    }
-    return render(request, "main/index.html", context)

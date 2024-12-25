@@ -6,53 +6,40 @@
     <title>Document</title>
   </head>
   <body>
-    {% comment %} <h2>Django Template Language</h2> {% endcomment %}
-    {% comment %} Template Variable {% endcomment %}
-    {% comment %} <p>{{ name }}</p> {% endcomment %}
+    {% comment %}
+    <h2>Django Template Language</h2>
+    {% endcomment %} {% comment %} Template Variable {% endcomment %} {% comment
+    %}
+    <p>{{ name }}</p>
+    {% endcomment %} {% comment %} filter without argument {% endcomment %}
 
-    {% comment %} filter without argument {% endcomment %}
-    {% comment %} <p>{{ des|upper }}</p>
+    <p>{{ des|upper }}</p>
     <p>{{ des|lower }}</p>
-    <p>{{ des|length}}</p> {% endcomment %}
-
+    <p>{{ des|length}}</p>
     {% comment %} filter with argument {% endcomment %}
-     {% comment %} <p>{{ des|truncatewords:3 }}</p>
-     <p>{{ des|truncatechars:5}}</p>
-     <p>{{ des|slice:'2'}}</p> {% endcomment %}
 
+    <p>{{ des|truncatewords:3 }}</p>
+    <p>{{ des|truncatechars:5}}</p>
+    <p>{{ des|slice:'2'}}</p>
+    {% comment %} default {% endcomment %} {% comment %}
+    <p>{{ des| default:'nothing'}}</p>
+    {% endcomment %} {% comment %} Chaining {% endcomment %} {% comment %}
 
-     {% comment %} default {% endcomment %}
-      {% comment %} <p>{{ des| default:'nothing'}}</p> {% endcomment %}
+    <p>{{des|truncatewords:3|upper}}</p>
+    {% endcomment %} {% comment %} datetime {% endcomment %} {% comment %}
+    <p>{{ dob }}</p>
+    <p>{{ dob | date }}</p>
+    <p>{{ dob | date:'D d M Y' }}</p>
+    <p>{{ dob | time }}</p>
+    {% endcomment %} {% comment %} float format {% endcomment %} {% comment %}
+    <p>{{ price | floatformat:2}}</p>
+    {% endcomment %} {% comment %} condition {% endcomment %} {% comment %} {%
+    if name|length <= 3 %}
+    <p>Greater Than 3</p>
+    {% else %}
+    <p>Smaller Than 3</p>
+    {% endif%} {% endcomment %} {% comment %} for loop {% endcomment %}
 
-
-      {% comment %} Chaining {% endcomment %}
-      {% comment %} <p>{{des|truncatewords:3|upper}}</p> {% endcomment %}
-
-
-      {% comment %} datetime {% endcomment %}
-      {% comment %} <p>{{ dob }}</p>
-      <p>{{ dob | date }}</p>
-      <p>{{ dob | date:'D d M Y' }}</p>
-      <p>{{ dob | time }}</p> {% endcomment %}
-
-      {% comment %} float format {% endcomment %}
-
-      {% comment %} <p>{{ price | floatformat:2}}</p> {% endcomment %}
-
-
-      {% comment %} condition {% endcomment %}
-
-      {% comment %} {% if name|length <= 3 %}
-      <p>Greater Than 3</p>
-      {% else %}
-       <p>Smaller Than 3</p>
-      {% endif%} {% endcomment %}
-
-      {% comment %} for loop {% endcomment %}
-
-      <p>{{ stu3.name }}</p>
-      
+    <p>{{ stu3.name }}</p>
   </body>
 </html>
-
-

@@ -1,0 +1,28 @@
+<!-- for inheritance extands tags  -->
+{%extends 'core/base.html'%}
+<!-- static -->
+{%load static %}
+<!-- title block -->
+
+{%block title%} Home {%endblock title %}
+
+<!-- content block -->
+{%block content%}
+
+<h2>This is home page after inherit</h2>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa alias
+  autem nam quos obcaecati assumenda accusamus et praesentium nihil quisquam, ad
+  qui vel, molestias molestiae? Nesciunt omnis sapiente eaque.
+</p>
+
+<strong
+  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+  consequatur neque, fugit ratione voluptas voluptate dolor! Eaque
+  exercitationem minus optio repellat. Illum quisquam sequi quis reiciendis
+  commodi consequatur. In, neque?</strong
+>
+
+<img src="{%static 'core/images/handsome.jpg'%}" alt="" width="200px" />
+<button onclick="hello()">Click me</button>
+{%endblock%}
