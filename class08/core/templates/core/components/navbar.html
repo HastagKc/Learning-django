@@ -1,0 +1,68 @@
+<!-- navbar start -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Nike</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+            >Home</a
+          >
+        </li>
+
+        <!-- 1st way -->
+
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/main/shop/">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/main/aboutme/">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/main/collection/">Collection</a>
+        </li> -->
+
+        <!-- 2nd ways dynamic hyperlink -->
+
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'collection' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'shop' %}">Collection</a>
+        </li>
+
+        <i class="ri-shopping-cart-line nav-link"></i> -->
+
+        <!-- 3rd way -->
+        <li class="nav-item">
+          {% url 'shop' as shop %}
+          <a class="nav-link" href="{{ shop }}">Shop</a>
+        </li>
+        {% url 'about' as about %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ about }}">About</a>
+        </li>
+        {% url 'collection' as collection %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ collection }}">Collection</a>
+        </li>
+        <i class="ri-shopping-cart-line nav-link"></i>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- navbar end -->

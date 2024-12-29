@@ -1,0 +1,159 @@
+{% extends "core/base.html" %}
+<!-- load static -->
+{% load static %}
+
+<!-- title -->
+{% block title %} home {% endblock %}
+
+<!-- content -->
+{% block content %}
+
+<!-- include carousel -->
+{% include 'core/components/carousel.html' %}
+<!-- carousel end -->
+
+<div class="container mt-5 mb-5">
+  <!-- about-section start -->
+  <div class="row">
+    <!-- left -->
+    <div class="col-sm-6">
+      <!-- left div left side -->
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <!-- top -->
+            <div class="col-12">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1673977133185-a460c4744cec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHNob2V8ZW58MHx8MHx8fDA%3D"
+                alt=""
+                srcset=""
+                class="img-fluid"
+                width="100%"
+                style="object-fit: cover; height: 200px"
+              />
+            </div>
+            <!-- bottom -->
+            <div class="col-12">
+              <img
+                src="https://images.unsplash.com/photo-1523314399-837f3e0c291b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHNob2V8ZW58MHx8MHx8fDA%3D"
+                alt=""
+                srcset=""
+                class="img-fluid pt-2"
+                width="100%"
+                style="object-fit: cover; height: 200px"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- left div right -->
+        <div class="col-6">
+          <img
+            src="https://images.unsplash.com/photo-1561909848-977d0617f275?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2hvZXxlbnwwfHwwfHx8MA%3D%3D"
+            alt=""
+            srcset=""
+            class="img-fluid"
+            width="100%"
+            style="object-fit: cover; height: 400px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- right -->
+    <div
+      class="col-sm-6 p-4"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+      "
+    >
+      <p class="text-uppercase fs-5 fw-bold">About Us</p>
+      <h2>
+        We Provide high <br />
+        quality Shoes
+      </h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+        perferendis necessitatibus, reprehenderit ullam temporibus accusantium
+        enim maxime quasi fugit, voluptas in aliquam veniam, quis voluptatum
+        placeat deserunt. Vero, saepe molestias!
+      </p>
+
+      <button type="button" class="btn btn-dark">Explore More</button>
+    </div>
+  </div>
+  <!-- about-section  end -->
+
+  <!-- category start -->
+  <div class="row" style="margin-top: 10rem">
+    <!-- cate top  -->
+    <div class="col-12">
+      <div class="row">
+        <div class="col-8">
+          <h1 class="fs-1 fw-bold">Categories</h1>
+        </div>
+        <div class="col-4 text-end link-opacity-75-hover">
+          <a
+            href="#"
+            class="link-opacity-75-hover text-decoration-none text-dark"
+            >All Products</a
+          >
+          <i class="ri-arrow-right-line"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- cate bottom  -->
+    <div class="col-12 mt-5">
+      <div class="row">
+        <div class="col-4">
+          <div class="card" style="width: 100%">
+            <img
+              src="https://images.unsplash.com/photo-1520390400998-b969c96e960e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHNob2V8ZW58MHx8MHx8fDA%3D"
+              class="card-img-top"
+              alt="..."
+              style="height: 320px"
+            />
+            <div class="card-body">
+              <p class="card-text text-center">Men</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card" style="width: 100%">
+            <img
+              src="https://images.unsplash.com/photo-1574946943172-4800feadfab7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHNob2V8ZW58MHx8MHx8fDA%3D"
+              class="card-img-top"
+              alt="..."
+              style="height: 320px"
+            />
+            <div class="card-body">
+              <p class="card-text text-center">Women</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card" style="width: 100%">
+            <img
+              src="https://images.unsplash.com/photo-1562424995-2efe650421dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fHNob2V8ZW58MHx8MHx8fDA%3D"
+              class="card-img-top"
+              alt="..."
+              style="height: 320px"
+            />
+            <div class="card-body">
+              <p class="card-text text-center">Kids</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- category end -->
+
+  {% endblock content %}
+</div>
