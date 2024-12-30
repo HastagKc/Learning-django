@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+<!-- title -->
+{% block title %} All Student {% endblock %}
+
+<!-- content -->
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Roll</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <!-- if  -->
+    {% if student %}
+    <tr>
+      <td scope="row">{{ student.roll }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.address }}</td>
+      <td>{{ student.email }}</td>
+    </tr>
+
+    {% else %}
+    <h4>Data not found</h4>
+    <!-- endif -->
+    {% endif %}
+    <!-- end for  -->
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
