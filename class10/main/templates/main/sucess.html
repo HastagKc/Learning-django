@@ -6,12 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Contact Us</h1>
-    <form action="" method="POST">
-      {% csrf_token %}
-      <!-- from -->
-      {{ form.as_div }}
-      <button type="submit">Send</button>
-    </form>
+    <h2>Message is Submitted Sucessfully</h2>
+    <button>
+      <a href="{% url 'home' %}">Go Back To Contact from</a>
+    </button>
   </body>
 </html>
