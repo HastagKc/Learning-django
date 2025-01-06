@@ -1,0 +1,37 @@
+{% extends "main/base.html" %}
+
+<!-- title -->
+{% block title %} Home {% endblock title %}
+
+<!-- content -->
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.N.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email Address</th>
+      <th scope="col">Age</th>
+      <th scope="col">Enrollment</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>
+        <button type="button" class="btn btn-primary">See Details</button>
+        <button type="button" class="btn btn-success">Update</button>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock content %}
