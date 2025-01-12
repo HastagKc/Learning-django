@@ -8,5 +8,4 @@ class StudentAdmin(admin.ModelAdmin):
   list_display = ['id', 'name','email','age','enrollment','created_at']
 
 
-
 # admin.site.register(Student)

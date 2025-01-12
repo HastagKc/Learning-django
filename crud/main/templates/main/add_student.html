@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+<!-- title -->
+{% block title %} Add Student {% endblock title %}
+
+<!-- content -->
+{% block content %}
+<form action="" method="POST">
+  <!-- csrf token -->
+  {% csrf_token %}
+  <!-- form -->
+  {{ form.as_p }}
+  <button class="bg-success" type="submit">Add Student</button>
+</form>
+
+{% endblock content %}

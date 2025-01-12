@@ -19,19 +19,21 @@
     </tr>
   </thead>
   <tbody>
+    {% for stu in students %}
     <tr>
       <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+      <td>{{ stu.name }}</td>
+      <td>{{ stu.email }}</td>
+      <td>{{ stu.age }}</td>
+      <td>{{ stu.enrollment }}</td>
+      <td>{{ stu.created_at }}</td>
       <td>
         <button type="button" class="btn btn-primary">See Details</button>
         <button type="button" class="btn btn-success">Update</button>
         <button type="button" class="btn btn-danger">Delete</button>
       </td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 {% endblock content %}
