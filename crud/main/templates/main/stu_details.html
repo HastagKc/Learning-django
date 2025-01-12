@@ -1,0 +1,18 @@
+{% extends "main/base.html" %}
+
+<!-- title -->
+{% block title %} Student Details {% endblock title %}
+
+<!-- content -->
+{% block content %}
+<div>
+  <p>id: {{ stu.id }}</p>
+  <p>Name: {{ stu.name }}</p>
+  <p>Email: {{ stu.email }}</p>
+  <p>Age: {{ stu.age }}</p>
+  <p>Enrollment:{{ stu.enrollment }}</p>
+  <p>Created At: {{ stu.created_at }}</p>
+  <a href="{% url 'read' %}">Back to List</a>
+</div>
+
+{% endblock content %}

@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
+from django.http import HttpResponse
 from .models import Student
 from .forms import StudentForm
 
@@ -37,22 +38,48 @@ def add_student(request):
       
   else:
     form = StudentForm()
-  return render(request, "main/add_student.html",{'form':form})
+  return render(request, "main/form.html",{'form':form})
 
 
 # update
-def update_student(request):
-  pass
+def update_student(request, pk):
+   stu = get_object_or_404(Student, pk = pk)
+   if request.method == 'POST':
+      form = StudentForm(request.POST)
+      if form.is_valid():
+         for key,value in form.cleaned_data.items():
+            setattr(stu, key, value)
+         stu.save()
+         return redirect("read")
+   else:  
+      form = StudentForm(
+         initial= {
+            'name':stu.name,
+            'email':stu.email,
+            'age':stu.age,
+            'enrollment':stu.enrollment,
+            'created_at':stu.created_at,
+         }
+      )
+   return render(request, "main/form.html",{'form':form})
+
 
 
 # delete
-def delete_student(request):
-  pass
+
+def delete_student(request, id):
+    stu = get_object_or_404(Student, pk=id)
+    if request.method == 'POST':
+        stu.delete()
+        return redirect('read')
+    else:
+        return HttpResponse("Method not allowed", status=405)
 
 
 # student details
-def student_details(request):
-  pass
+def student_details(request, pk):
+  stu = get_object_or_404(Student, pk = pk)
+  return render(request, 'main/stu_details.html', {'stu':stu})
 
 
 
