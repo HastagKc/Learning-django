@@ -1,12 +1,45 @@
 {% extends 'main/base.html' %}
 
 <!-- title -->
+{% block title %}Home{% endblock title %}
 
-{% block title %} Home {% endblock title %}
+<!-- style -->
+
+{% block style %} {% comment %} {% endcomment %} {% endblock %}
 
 <!-- content -->
-
 {% block content %}
-<h2>Messages</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      {% if messages %} {% for msg in messages %}
+      <div
+        class="alert alert-{{ msg.tags }} alert-dismissible fade show"
+        role="alert"
+      >
+        <strong> {{ msg }}</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
 
+      {% endfor %} {% endif %}
+
+      <!-- alert end  -->
+
+      <div class="p-4">
+        <form action="" method="post">
+          {% csrf_token %}
+          <!-- form -->
+          {{ form.as_p }}
+
+          <button class="btn btn-success" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
