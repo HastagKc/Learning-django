@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+
+<!-- title -->
+{% block title %}Home{% endblock title %}
+
+<!-- style  -->
+{% block style %}{% endblock style %}
+
+<!-- content -->
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-6 p-4">
+      <form action="" method="post">
+        {% csrf_token %}
+
+        <!-- Render each field manually -->
+        {% for field in form %}
+        <div class="mb-3">
+          {{ field.label_tag }}
+          <!-- filed -->
+          {{ field }}
+
+          <!-- error -->
+          {% if field.errors %}
+          <div class="text-danger">{{ field.errors }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        <button class="btn btn-success mt-2" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
