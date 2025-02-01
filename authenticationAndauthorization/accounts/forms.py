@@ -19,7 +19,7 @@ class RegistrationForm(UserCreationForm):
     return email
   
   # init function 
-  # def __init__(self, *args, **kwargs):
-  #   super().__init__(*args, **kwargs)
-  #   for field in self.fields.values():
-  #     field.widget.attrs.update({'class':'form-control'})
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    for field in self.fields.values():
+      field.widget.attrs.update({'class':'form-control'})

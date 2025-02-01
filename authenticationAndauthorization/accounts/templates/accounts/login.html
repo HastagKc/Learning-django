@@ -9,28 +9,39 @@
   <div class="row">
     <div class="col-6">
       <h3 class="text-center p-4">Login</h3>
+
+      <!-- form start -->
       <form method="post">
         {% csrf_token %}
-        <!-- form -->
-
+        <!-- form error -->
         {% if error %}
         <p class="text-danger">{{ error }}</p>
         {% endif %}
         <!-- user name start -->
         <div class="mb-3">
-          <label for="" class="form-label">Enter your Username</label>
-          <input type="text" class="form-control" id="" name="username" />
+          <label for="username" class="form-label">Enter your Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username1"
+          />
         </div>
-
         <!-- username end -->
+
         <!-- password start -->
         <div class="mb-3">
-          <label for="" class="form-label">Enter your Username</label>
-          <input type="password" class="form-control" id="" name="password" />
+          <label for="password" class="form-label">Enter your Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password1"
+          />
         </div>
         <!-- password end -->
 
-        <button class="btn btn-success mt-2">Login</button>
+        <button type="submit" class="btn btn-success mt-2">Login</button>
       </form>
     </div>
   </div>
