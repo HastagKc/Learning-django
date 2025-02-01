@@ -49,5 +49,4 @@ def home(request):
 
     else:
         form = FeedbackForm()
-
     return render(request, 'main/index.html', {'form': form})

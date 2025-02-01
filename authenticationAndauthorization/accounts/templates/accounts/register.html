@@ -1,0 +1,116 @@
+{% extends "accounts/base.html" %}
+<!-- title -->
+{% block title %} {% endblock title %}
+
+<!-- content -->
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-6 p-4">
+      <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <!-- form -->
+
+        <!-- 1st way -->
+        <!-- {{ form.as_p }} -->
+
+        <!-- 2nd ways -->
+        <!-- username start -->
+        <div class="mb-3">
+          <label for="{{ form.username.id_for_label}}" class="form-label"
+            >Enter Your Username</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="{{ form.username.name }}"
+            id="{{ form.username.id_for_label}}"
+          />
+          <span class="text-danger"> {{ form.username.errors }} </span>
+        </div>
+
+        <!-- username end -->
+
+        <!-- firstname start -->
+
+        <div class="mb-3">
+          <label for="{{ form.first_name.id_for_label}}" class="form-label"
+            >Enter Your FirstName</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="{{ form.first_name.name }}"
+            id="{{ form.first_name.id_for_label}}"
+          />
+          <span class="text-danger"> {{ form.first_name.errors }} </span>
+        </div>
+
+        <!-- firstname end -->
+
+        <!-- lastname start -->
+        <div class="mb-3">
+          <label for="{{ form.last_name.id_for_label}}" class="form-label"
+            >Enter Your LastName</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="{{ form.last_name.name }}"
+            id="{{ form.last_name.id_for_label}}"
+          />
+          <span class="text-danger"> {{ form.last_name.errors }} </span>
+        </div>
+
+        <!-- lastname end -->
+
+        <!-- email start  -->
+        <div class="mb-3">
+          <label for="{{ form.email.id_for_label}}" class="form-label"
+            >Enter Your Email Address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            name="{{ form.email.name }}"
+            id="{{ form.email.id_for_label}}"
+          />
+          <span class="text-danger"> {{ form.email.errors }} </span>
+        </div>
+        <!-- email end -->
+
+        <!-- password start -->
+        <div class="mb-3">
+          <label for="{{ form.password1.id_for_label}}" class="form-label"
+            >Enter Your Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            name="{{ form.password1.name }}"
+            id="{{ form.password1.id_for_label}}"
+          />
+          <span class="text-danger"> {{ form.password1.errors }} </span>
+        </div>
+        <!-- password end -->
+
+        <!-- confirm password start -->
+        <div class="mb-3">
+          <label for="{{ form.password2.id_for_label}}" class="form-label"
+            >Enter Your Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            name="{{ form.password2.name }}"
+            id="{{ form.password2.id_for_label}}"
+          />
+          <span class="text-danger"> {{ form.password2.errors }} </span>
+        </div>
+        <!-- confirm password end -->
+        <button class="btn btn-success" type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
