@@ -10,6 +10,7 @@ def dashboard(request):
   return render(request, 'accounts/dashboard.html')
 
 
+
 def user_register(request):
   if request.method == 'POST':
     form = RegistrationForm(request.POST)
@@ -19,6 +20,15 @@ def user_register(request):
   else:
     form = RegistrationForm()
   # return render(request, 'accounts/register.html', {'form':form})
+
+def user_register(request):
+  if request.method == 'POST':
+    form = RegistrationForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return redirect('login')
+  else:
+    form = RegistrationForm()
   return render(request, 'accounts/registration.html', {'form':form})
 
 
