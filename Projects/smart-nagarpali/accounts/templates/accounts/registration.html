@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+<!-- title -->
+{% block title %} {% endblock title %}
+
+<!-- content -->
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-6 p-4">
+      <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <!-- form -->
+        <!-- 3rd way  -->
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+          <!-- label -->
+          <label for="{{ field.id_for_label }}" class="mt-2">
+            {{ field.label }}
+          </label>
+
+          <!-- field -->
+          {{ field }}
+
+          <!-- errors -->
+          <span class="text-danger">{{ field.errors }}</span>
+        </div>
+
+        {% endfor %}
+        <button class="btn btn-success mt-2" type="submit">Register</button>
+      </form>
+    </div>
+
+    <div class="col-6">
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/005/879/539/small_2x/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-with-isolated-people-scene-free-vector.jpg"
+        alt=""
+        class="img-fluid pt-4"
+      />
+    </div>
+  </div>
+</div>
+{% endblock content %}
